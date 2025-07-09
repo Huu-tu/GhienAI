@@ -1,4 +1,4 @@
-export const title = 'Resources Library'
+export const title = 'GHIỀN AI'
 
 export const description =
-  'The most up-to-date and comprehensive resources, templates, and strategies to assist you in navigating technical interviews effectively.'
+  'Học AI ăn ghiền'

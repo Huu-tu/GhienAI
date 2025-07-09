@@ -2,10 +2,12 @@ import { CircleFadingPlus, MenuIcon } from 'lucide-react'
 import { useState } from 'react'
 
 const navLinks = [
-  { title: 'Tools', link: '#' },
-  { title: 'Blog', link: '#' },
-  { title: 'Contact', link: '#' },
-  { title: 'About', link: '#' },
+  { title: 'Trang chủ', link: '/' },
+  { title: 'Blog', link: '/blog' },
+  { title: 'Tài liệu', link: '/doc' },
+  { title: 'Ứng dụng', link: '/case' },
+  { title: 'Ghiền AI', link: '/about' },
+  { title: 'Liên hệ', link: '/contact' },
 ]
 
 const Navbar = () => {
