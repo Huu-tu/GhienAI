@@ -1,15 +1,8 @@
 import { FC } from 'react'
 import VerticalBlogCard from './VerticalBlogCard'
 import HorizontalBlogCard from './HorizontalBlogCard'
+import {BlogPost} from 'types/index';
 
-interface BlogPost {
-  title: string
-  shortDescription: string
-  cover: string
-  slug: string
-  publishDate: string
-  estimatedTimeToRead: string
-}
 
 interface BlogListProps {
   posts: BlogPost[]
@@ -23,7 +16,7 @@ const BlogList: FC<BlogListProps> = ({ posts, type = 'vertical' }) => {
     return (
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {posts.map((post) => (
-          <VerticalBlogCard key={post.slug} post={post} />
+          <VerticalBlogCard key={post._id} post={post} />
         ))}
       </div>
     )
@@ -31,7 +24,7 @@ const BlogList: FC<BlogListProps> = ({ posts, type = 'vertical' }) => {
     return (
       <div className="grid gap-6 sm:grid-cols-2">
         {posts.map((post) => (
-          <HorizontalBlogCard key={post.slug} post={post} />
+          <HorizontalBlogCard key={post._id} post={post} />
         ))}
       </div>
     )

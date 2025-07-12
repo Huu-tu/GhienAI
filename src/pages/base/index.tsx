@@ -1,12 +1,15 @@
-import { blogPosts, categories, description, faqs, title } from 'appData'
+import {  categories, description, faqs, title } from 'appData'
 import CategoryList from 'components/category/CategoryList'
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
-import BlogList from 'components/blog/BlogList'
 import Faq from 'components/faq/Faq'
 import Newsletter from 'components/newsletter/Newsletter'
 import Banner from 'components/banner/SimpleBanner.tsx'
+import BlogList from 'components/blog/BlogList';
+import { useGetBlogs } from 'libs/hooks';
 
 const Base= ()=>{
+  const { data: blogs = [], isLoading } = useGetBlogs();
+
   return(
     <>
       <Banner title={title} description={description}/>
@@ -16,14 +19,13 @@ const Base= ()=>{
           title={['Latest', 'Articles']}
           subtitle=""
         />
-        <BlogList posts={blogPosts} />
+        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} />}
 
         <SectionHeading
           title={['Popular', 'Articles']}
           subtitle=""
         />
-        <BlogList posts={blogPosts} type="horizontal" />
-
+        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} type="horizontal" />}
         <Faq items={faqs} />
         <Newsletter />
       </div>

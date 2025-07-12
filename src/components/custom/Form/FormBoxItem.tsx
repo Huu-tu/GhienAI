@@ -1,69 +1,23 @@
-import { useState } from 'react';
-import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
-import FroalaEditor from 'react-froala-wysiwyg';
-import { useCreateBlog } from 'libs/hooks';
-import { BlogPayload } from 'types/index'
+import FroalaEditor from 'react-froala-wysiwyg'
 
-import 'froala-editor/js/plugins.pkgd.min.js';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import 'froala-editor/css/froala_style.min.css';
-import 'font-awesome/css/font-awesome.css';
-
-const ModalAddUpdateBlog = ()=>{
-  const { mutate: createBlog } = useCreateBlog();
-
-  const[content, setContent] = useState('');
-  const[file, setFile] = useState(null);
-  const[data, setData] = useState({
-    title: "",
-    paragraph: "",
-    content: "",
-    image: "",
-    type:""
-  });
-
-  const handleChange = async (e:any) =>{
-    setData({...data, [e.target.name]: e.target.value});
-    if (e.target.files) {
-      setFile(e.target.files[0])
-    }
-  }
-
-  const submitHandler = async (e: any) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('title', data.title);
-    formData.append('paragraph', data.paragraph);
-    formData.append('content', data.content);
-    formData.append('type', data.type);
-
-    if (file) {
-      formData.append('image', file);
-    }
-
-    try {
-      createBlog(
-        formData as BlogPayload,
-        {
-          onSuccess: () => {
-            window.location.reload();
-          },
-        },
-      );
-    } catch (err) {
-      console.error('Error uploading blog:', err);
-    }
-  };
-
+const FormBoxItem = ({
+                       title,
+                       paragraph,
+                       content,
+                       type,
+                       image,
+                       estimatedTimeToRead = 5
+                     }: {
+  title: string;
+  paragraph?: string;
+  content?: string;
+  type?: string;
+  image?: string;
+  estimatedTimeToRead?: number;
+})=>{
   return(
-    <div className="mx-auto max-w-6xl px-3">
-      <SectionHeading
-        title={['Modal add blog']}
-        subtitle=""
-      />
-      <form onSubmit={submitHandler}>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+    <div >
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           <div className="sm:col-span-2">
             <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Title
@@ -120,13 +74,12 @@ const ModalAddUpdateBlog = ()=>{
             />
           </div>
         </div>
-        <button type="submit"
-                className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 ">
-          Add blog
-        </button>
-      </form>
+      <button type="submit"
+              className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 ">
+        Add blog
+      </button>
     </div>
   )
 }
 
-export default ModalAddUpdateBlog;
+export default FormBoxItem;
