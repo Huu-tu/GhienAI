@@ -24,7 +24,7 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
         />
       </figure>
 
-      <a href={`/${_id}`}>
+      <a href={`http://localhost:5173/blog/view-blog/${_id}`}>
         <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
           {title}
         </h3>

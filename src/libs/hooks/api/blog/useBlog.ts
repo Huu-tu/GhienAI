@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { BlogPayload } from 'types/index'
 import { fetcher, HTTPMethod } from 'config/api'
 import { QUERY_KEY } from 'config/constants'
@@ -8,6 +7,7 @@ import {BlogPost} from 'types/index';
 const baseUrl = 'blog/';
 const url = {
   getBlogs: baseUrl + 'get-blogs',
+  viewBlog: baseUrl + 'view-blog/',
   addBlog: baseUrl + 'add-blog',
 };
 
@@ -24,13 +24,18 @@ const useGetBlogs = () => {
   })
 }
 
-export const addBlog = async (payload: BlogPayload) => {
-  return await axios.post('http://localhost:4000/' + 'api/blog', payload, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
+const useViewBlog = (_id: string) => {
+  return useQuery({
+    queryKey: [QUERY_KEY.VIEW_BLOG],
+    queryFn: () => {
+      return fetcher<BlogPost>({
+        method: HTTPMethod.GET,
+        url: url.viewBlog + _id
+      })
     },
   })
 }
+
 
 const useCreateBlog = () =>{
   return useMutation({
@@ -46,4 +51,4 @@ const useCreateBlog = () =>{
   })
 }
 
-export {  useGetBlogs, useCreateBlog };
+export {  useGetBlogs, useCreateBlog, useViewBlog };

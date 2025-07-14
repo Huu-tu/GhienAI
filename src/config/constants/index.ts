@@ -4,6 +4,7 @@ export const QUERY_KEY = {
   // BLOG
   GET_BLOG: 'GET_BLOG',
   GET_BLOGS: 'GET_BLOGS',
+  VIEW_BLOG: 'VIEW_BLOG',
 };
 
 export const NETWORK_CONFIG = {

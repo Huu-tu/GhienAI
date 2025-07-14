@@ -24,7 +24,6 @@ export default defineConfig({
       include: ['crypto', 'stream'],
     }),
   ],
-
   server: {
     host: true,
   },

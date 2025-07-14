@@ -62,8 +62,8 @@ const ModalAddUpdateBlog = ()=>{
         title={['Modal add blog']}
         subtitle=""
       />
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
       <form onSubmit={submitHandler}>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           <div className="sm:col-span-2">
             <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Title
@@ -119,12 +119,12 @@ const ModalAddUpdateBlog = ()=>{
               // config={config}
             />
           </div>
-        </div>
         <button type="submit"
                 className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 ">
           Add blog
         </button>
       </form>
+      </div>
     </div>
   )
 }
