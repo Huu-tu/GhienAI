@@ -16,9 +16,23 @@ const ModalViewBlog=  () =>{
         subtitle=""
       />
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6"
-           dangerouslySetInnerHTML={{ __html: blog?.content || '' }}
       >
-        {/*{blog?.content}*/}
+        <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+          {blog?.paragraph}
+        </p>
+        <div className="mb-10 w-full overflow-hidden rounded">
+          <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
+            <img
+              src={`http://localhost:4000/img/` + `${blog?.image}`}
+              alt="image"
+              className="object-cover object-center"
+            />
+          </div>
+        </div>
+        <div
+          className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: blog?.content || '' }}
+        ></div>
       </div>
     </div>
     )
