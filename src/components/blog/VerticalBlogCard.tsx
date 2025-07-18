@@ -7,7 +7,7 @@ interface BlogCardProps {
 }
 
 const BlogCard: FC<BlogCardProps> = ({ post }) => {
-  const { title, paragraph, image, _id } = post
+  const { title, shortDescription, image, _id } = post
 
   return (
     <div
@@ -28,7 +28,7 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
         <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
           {title}
         </h3>
-        <p className="text-gray-700 truncate">{paragraph}</p>
+        <p className="text-gray-700 truncate">{shortDescription}</p>
         <p className="mt-4 text-sm font-semibold text-primary">
           {/*{formatDate(publishDate)} | {estimatedTimeToRead}*/}
         </p>

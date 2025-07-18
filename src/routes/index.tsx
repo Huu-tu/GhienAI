@@ -7,6 +7,8 @@ import ModalAddUpdateBlog from 'pages/blog/components/ModalAddUpdateBlog';
 import ModalViewBlog from 'pages/blog/components/ModalViewBlog';
 import Doc from 'pages/doc';
 import CaseStudy from 'pages/case-study';
+import ModalAddUpdateCase from 'pages/case-study/components/ModalAddUpdateCase';
+import ModalViewCase from 'pages/case-study/components/ModalViewCase';
 import About from 'pages/about';
 
 export const routers = createBrowserRouter([{
@@ -30,8 +32,17 @@ export const routers = createBrowserRouter([{
     path: PUBLIC_ROUTERS.DOC,
     element: <Doc />
   },{
-    path: PUBLIC_ROUTERS.CASE,
-    element: <CaseStudy />
+    path: PUBLIC_ROUTERS.CASE.INDEX,
+    children: [{
+      path: PUBLIC_ROUTERS.CASE.INDEX,
+      element: <CaseStudy />,
+    },{
+      path: PUBLIC_ROUTERS.CASE.ADD_CASE,
+      element: <ModalAddUpdateCase />,
+    },{
+      path: PUBLIC_ROUTERS.CASE.VIEW_CASE,
+      element: <ModalViewCase />,
+    }]
   },{
     path: PUBLIC_ROUTERS.ABOUT,
     element: <About />

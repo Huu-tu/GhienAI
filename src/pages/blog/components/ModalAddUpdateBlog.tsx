@@ -12,17 +12,17 @@ import 'font-awesome/css/font-awesome.css';
 const ModalAddUpdateBlog = ()=>{
   const { mutate: createBlog } = useCreateBlog();
 
-  const[content, setContent] = useState('');
+  const[description, setDescription] = useState('');
   const[file, setFile] = useState(null);
   const[data, setData] = useState({
     title: "",
-    paragraph: "",
-    content: "",
+    shortDescription: "",
+    description: "",
     image: "",
     type:""
   });
 
-  const handleChange = async (e:any) =>{
+  const handleChange = async (e: any) =>{
     setData({...data, [e.target.name]: e.target.value});
     if (e.target.files) {
       setFile(e.target.files[0])
@@ -34,8 +34,8 @@ const ModalAddUpdateBlog = ()=>{
 
     const formData = new FormData();
     formData.append('title', data.title);
-    formData.append('paragraph', data.paragraph);
-    formData.append('content', data.content);
+    formData.append('shortDescription', data.shortDescription);
+    formData.append('description', data.description);
     formData.append('type', data.type);
 
     if (file) {
@@ -57,14 +57,16 @@ const ModalAddUpdateBlog = ()=>{
   };
 
   return(
-    <div className="mx-auto max-w-6xl px-3">
-      <SectionHeading
-        title={['Modal add blog']}
-        subtitle=""
-      />
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-      <form onSubmit={submitHandler}>
-          <div className="sm:col-span-2">
+    <div className="container">
+      <div className="mx-auto max-w-6xl  flex flex-wrap justify-center">
+        <div className="w-full lg:w-10/12">
+          <SectionHeading
+            title={['Modal add blog']}
+            subtitle=""
+          />
+          <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
+            <form onSubmit={submitHandler}>
+              <div className="sm:col-span-2">
             <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Title
             </label>
@@ -74,11 +76,11 @@ const ModalAddUpdateBlog = ()=>{
                    placeholder="Nhập tiêu đề" />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="paragraph" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Paragraph
+            <label htmlFor="shortDescription" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Mô tả ngắn
             </label>
-            <input type="textarea" name="paragraph" id="paragraph"
-                   onChange={handleChange} value={data.paragraph}
+            <input type="textarea" name="shortDescription" id="shortDescription"
+                   onChange={handleChange} value={data.shortDescription}
                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                    placeholder="Nhập văn bản" />
           </div>
@@ -107,14 +109,14 @@ const ModalAddUpdateBlog = ()=>{
                    placeholder="12" />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="content"
+            <label htmlFor="description"
                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
             <FroalaEditor
               tag="textarea"
-              model={content}
+              model={description}
               onModelChange={(newContent: any): void => {
-                setContent(newContent);
-                setData(prev => ({ ...prev, content: newContent })); // cập nhật vào data.content
+                setDescription(newContent);
+                setData(prev => ({ ...prev, description: newContent })); // cập nhật vào data.content
               }}
               // config={config}
             />
@@ -124,6 +126,8 @@ const ModalAddUpdateBlog = ()=>{
           Add blog
         </button>
       </form>
+      </div>
+        </div>
       </div>
     </div>
   )

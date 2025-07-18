@@ -7,8 +7,8 @@
 //     where: { id },
 //     select: {
 //       title: true,
-//       paragraph: true,
-//       content: true,
+//       shortDescription: true,
+//       description: true,
 //       imageUrl: true,
 //       type: true,
 //       createdAt: true,
@@ -23,7 +23,7 @@
 //       {/*  subtitle=""*/}
 //       {/*/>*/}
 //       {/*<div className="grid gap-4 sm:grid-cols-2 sm:gap-6"*/}
-//       {/*     dangerouslySetInnerHTML={{ __html: blog?.content || '' }}>*/}
+//       {/*     dangerouslySetInnerHTML={{ __html: blog?.description || '' }}>*/}
 //       {/*</div>*/}
 //     </div>
 //   )

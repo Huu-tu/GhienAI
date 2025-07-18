@@ -5,6 +5,10 @@ export const QUERY_KEY = {
   GET_BLOG: 'GET_BLOG',
   GET_BLOGS: 'GET_BLOGS',
   VIEW_BLOG: 'VIEW_BLOG',
+
+  // CASE STUDY
+  GET_CASES: 'GET_CASES',
+  VIEW_CASE: 'VIEW_CASE',
 };
 
 export const NETWORK_CONFIG = {

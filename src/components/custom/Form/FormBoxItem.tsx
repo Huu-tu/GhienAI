@@ -2,15 +2,15 @@ import FroalaEditor from 'react-froala-wysiwyg'
 
 const FormBoxItem = ({
                        title,
-                       paragraph,
-                       content,
+                       shortDescription,
+                       description,
                        type,
                        image,
                        estimatedTimeToRead = 5
                      }: {
   title: string;
-  paragraph?: string;
-  content?: string;
+  shortDescription?: string;
+  description?: string;
   type?: string;
   image?: string;
   estimatedTimeToRead?: number;
@@ -28,11 +28,11 @@ const FormBoxItem = ({
                    placeholder="Nhập tiêu đề" />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="paragraph" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Paragraph
+            <label htmlFor="shortDescription" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Mô tả ngắn
             </label>
-            <input type="textarea" name="paragraph" id="paragraph"
-                   onChange={handleChange} value={data.paragraph}
+            <input type="textarea" name="shortDescription" id="shortDescription"
+                   onChange={handleChange} value={data.shortDescription}
                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                    placeholder="Nhập văn bản" />
           </div>
@@ -61,7 +61,7 @@ const FormBoxItem = ({
                    placeholder="12" />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="content"
+            <label htmlFor="description"
                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
             <FroalaEditor
               tag="textarea"

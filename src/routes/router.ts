@@ -6,7 +6,11 @@ export const PUBLIC_ROUTERS = {
     VIEW_BLOG: '/blog/view-blog/:id',
   },
   DOC: '/doc',
-  CASE: '/case',
+  CASE: {
+    INDEX: '/case-study',
+    ADD_CASE: '/case-study/add-case',
+    VIEW_CASE: '/case-study/view-case/:id'
+  },
   REALUSE: '/application',
   ABOUT: '/about',
   CONTACT: '/contact',

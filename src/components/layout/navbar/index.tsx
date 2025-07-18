@@ -5,7 +5,7 @@ const navLinks = [
   { title: 'Trang chủ', link: '/' },
   { title: 'Blog', link: '/blog' },
   { title: 'Tài liệu', link: '/doc' },
-  { title: 'Ứng dụng', link: '/case' },
+  { title: 'Ứng dụng', link: '/case-study' },
   { title: 'Ghiền AI', link: '/about' },
   { title: 'Liên hệ', link: '/contact' },
 ]

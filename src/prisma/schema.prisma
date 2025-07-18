@@ -12,8 +12,8 @@ datasource db {
 model Blog {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
-  paragraph String
-  content   String
+  shortDescription String
+  description   String
   imageUrl  String?  // optional field
   type      String
   createdAt DateTime @default(now())
