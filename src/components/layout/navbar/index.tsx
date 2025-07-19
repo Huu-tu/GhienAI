@@ -1,4 +1,4 @@
-import { CircleFadingPlus, MenuIcon } from 'lucide-react'
+import {  MenuIcon, SearchIcon } from 'lucide-react'
 import { useState } from 'react'
 
 const navLinks = [
@@ -25,14 +25,14 @@ const Navbar = () =>{
             <MenuIcon color="#202020" strokeWidth={3} size={25} />
           </button>
           {/* logo */}
-          <a href="https://www.codevertiser.com/" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img
               src="https://res.cloudinary.com/dyvkdwzcj/image/upload/v1709055594/logo-1_vo1dni.png"
               className="h-8"
               alt="Logo"
             />
             <span className="self-center whitespace-nowrap text-xl font-semibold text-primary md:text-2xl">
-              Flexy UI
+              Ghiền AI
             </span>
           </a>
           {/* nav links */}
@@ -53,8 +53,8 @@ const Navbar = () =>{
           <button
             type="button"
             className="flex items-center gap-2 rounded-lg border bg-theme px-4 py-2 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-theme-hover active:scale-95 sm:px-5 sm:py-2.5">
-            <CircleFadingPlus size={18} />
-            <span>Submit</span>
+            <SearchIcon size={18} />
+            <span>Search</span>
           </button>
         </div>
       </div>

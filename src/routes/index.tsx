@@ -10,6 +10,7 @@ import CaseStudy from 'pages/case-study';
 import ModalAddUpdateCase from 'pages/case-study/components/ModalAddUpdateCase';
 import ModalViewCase from 'pages/case-study/components/ModalViewCase';
 import About from 'pages/about';
+import Contact from 'pages/contact';
 
 export const routers = createBrowserRouter([{
   element: <Layout />,
@@ -46,5 +47,8 @@ export const routers = createBrowserRouter([{
   },{
     path: PUBLIC_ROUTERS.ABOUT,
     element: <About />
+  },{
+    path: PUBLIC_ROUTERS.CONTACT,
+    element: <Contact />
   }]
 }])

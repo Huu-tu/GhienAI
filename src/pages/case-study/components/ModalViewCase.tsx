@@ -1,22 +1,22 @@
 import { useParams } from 'react-router-dom';
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
-import {useViewBlog} from "libs/hooks"
+import {useViewCase} from "libs/hooks"
 import SharePost from "components/custom/Button/SharePost"
 import TagButton from "components/custom/Button/TagButton"
 
 const ModalViewCase=  () =>{
   const { id } = useParams();
-  const { data: blog, isLoading, error } = useViewBlog(id as string);
+  const { data: viewCase, isLoading, error } = useViewCase(id as string);
 
   if (isLoading) return <div>Đang tải...</div>;
   if (error) return <div>Đã xảy ra lỗi khi tải blog.</div>;
-  if (!blog) return <div>Không tìm thấy blog.</div>;
+  if (!viewCase) return <div>Không tìm thấy blog.</div>;
   return(
     <div className="container">
       <div className="mx-auto max-w-6xl  flex flex-wrap justify-center">
         <div className="w-full lg:w-10/12">
           <SectionHeading
-            title={[`${blog?.title}`]}
+            title={[`${viewCase?.title}`]}
             subtitle=""
           />
           <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
@@ -79,18 +79,18 @@ const ModalViewCase=  () =>{
                 href="#0"
                 className="inline-flex items-center justify-center rounded-full bg-theme px-4 py-2 text-sm font-semibold text-white"
               >
-                {blog?.type}
+                {viewCase?.type}
               </a>
             </div>
           </div>
           <div>
             <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-              {blog?.shortDescription}
+              {viewCase?.shortDescription}
             </p>
             <div className="mb-10 w-full overflow-hidden rounded">
               <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                 <img
-                  src={`http://localhost:4000/img/` + `${blog?.image}`}
+                  src={`http://localhost:4000/img/` + `${viewCase?.image}`}
                   alt="image"
                   className="object-cover object-center"
                 />
@@ -98,7 +98,7 @@ const ModalViewCase=  () =>{
             </div>
             <div
               className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: blog?.description || '' }}
+              dangerouslySetInnerHTML={{ __html: viewCase?.description || '' }}
             ></div>
 
             {/*<p className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">*/}

@@ -6,7 +6,7 @@ const CaseStudy = ()=>{
 
   return(
     <div className="mx-auto max-w-6xl px-3">
-      {isLoading ? <p>Đang tải...</p> : <BlogList posts={cases} type="horizontal"/>}
+      {isLoading ? <p>Đang tải...</p> : <BlogList posts={cases} type="horizontal" link={"case-study/view-case"}/>}
     </div>
   )
 }

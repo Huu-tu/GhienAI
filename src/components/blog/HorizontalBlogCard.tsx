@@ -1,13 +1,8 @@
 import { FC } from 'react'
 // import { formatDate } from '../../utils'
-import {BlogPost} from 'types/index';
+import {BlogCardProps} from 'types/index';
 
-
-interface BlogCardProps {
-  post: BlogPost
-}
-
-const BlogCard: FC<BlogCardProps> = ({ post }) => {
+const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
   const { title, shortDescription, image, _id } = post
 
   return (
@@ -20,7 +15,7 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
         />
       </figure>
 
-      <a href={`http://localhost:5173/blog/view-blog/${_id}`}>
+      <a href={`http://localhost:5173/${link}/${_id}`}>
         <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
           {title}
         </h3>

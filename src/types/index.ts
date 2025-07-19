@@ -18,6 +18,17 @@ export interface BlogPost {
   estimatedTimeToRead?: string
 }
 
+export interface BlogCardProps {
+  post: BlogPost;
+  link?: string;
+}
+
+export interface BlogListProps {
+  posts: BlogPost[];
+  type?: 'vertical' | 'horizontal';
+  link?: string;
+}
+
 export interface CaseStudyPayload {
   title?: string;
   shortDescription?: string;
@@ -35,5 +46,4 @@ export interface CaseStudyPost {
   type?: string;
   publishDate?: string
   estimatedTimeToRead?: string
-
 }

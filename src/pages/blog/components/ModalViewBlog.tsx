@@ -4,7 +4,7 @@ import {useViewBlog} from "libs/hooks"
 import SharePost from "components/custom/Button/SharePost"
 import TagButton from "components/custom/Button/TagButton"
 
-const ModalViewBlog=  () =>{
+const ModalViewBlog=  () => {
   const { id } = useParams();
   const { data: blog, isLoading, error } = useViewBlog(id as string);
 
