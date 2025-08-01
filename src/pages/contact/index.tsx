@@ -6,21 +6,25 @@ const Contact = () =>{
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24">
           <div className="flex items-center lg:mb-0 mb-10">
             <div className="">
-              <h4 className="text-theme text-base font-medium leading-6 mb-4 lg:text-left text-center">Contact
-                Us</h4>
-              <p className="text-lg  text-secondary mb-10">
+              <h4 className="text-theme text-base font-medium leading-6 mb-4 lg:text-left text-center">
+                Contact Us
+              </h4>
+              <p className="text-lg text-secondary mb-10">
                 Bạn có thông tin cần chia sẻ, phản hồi về nội dung, hoặc đề xuất hợp tác? Hãy liên hệ với chúng tôi qua biểu mẫu dưới đây.
               </p>
               <form action="">
                 <input type="text"
-                       className="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg  leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
-                       placeholder="Name" />
+                       className="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
+                       placeholder="Họ và tên" />
                 <input type="email"
                        className="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg  leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
                        placeholder="Email" />
-                <textarea name="" id="text"
+                <input type="phone"
+                       className="w-full h-14 shadow-sm text-gray-600 placeholder-text-400 text-lg  leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
+                       placeholder="Số đện thoại" />
+                <textarea name="topic" id="text"
                           className="w-full h-48 shadow-sm resize-none text-gray-600 placeholder-text-400 text-lg  leading-7 rounded-2xl border border-gray-200 focus:outline-none px-4 py-4 mb-8"
-                          placeholder="Phone"></textarea>
+                          placeholder="Topic"></textarea>
                 <button
                   className="w-full h-12 text-center text-white text-base  leading-6 rounded-full bg-theme shadow transition-all duration-700 hover:bg-indigo-800">Submit
                 </button>
