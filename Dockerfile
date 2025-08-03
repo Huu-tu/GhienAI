@@ -1,29 +1,24 @@
-# Use Node.js as the base image
-FROM node:20-alpine
+# Build stage
+FROM node:20-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock
+# Copy dependency files first (để cache hiệu quả)
 COPY package.json yarn.lock ./
 
-# Install dependencies
 RUN yarn install --frozen-lockfile
 
-# Copy the rest of the application
+# Copy toàn bộ source code
 COPY . .
 
-# Build the application
+# Build Vite app (Vite sẽ tạo ra thư mục dist/)
 RUN yarn build
 
-# Use nginx to serve the built application
+# Production stage
 FROM nginx:alpine
 
-# Copy the build output to replace the default nginx contents
-COPY --from=0 /app/dist /usr/share/nginx/html
-
-# Copy custom nginx config if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy Vite dist folder sang nginx
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
