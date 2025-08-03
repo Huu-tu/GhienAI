@@ -1,8 +1,6 @@
-import {  categories, description, faqs, title } from 'appData'
+import {  categories, description, title } from 'appData'
 import CategoryList from 'components/category/CategoryList'
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
-import Faq from 'components/faq/Faq'
-import Newsletter from 'components/newsletter/Newsletter'
 import Banner from 'components/banner/SimpleBanner.tsx'
 import BlogList from 'components/blog/BlogList';
 import { useGetBlogs } from 'libs/hooks';
@@ -19,15 +17,15 @@ const Base= ()=>{
           title={['Latest', 'Articles']}
           subtitle=""
         />
-        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} />}
+        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} link={"blog/view-blog"}/>}
 
         <SectionHeading
           title={['Popular', 'Articles']}
           subtitle=""
         />
-        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} type="horizontal" />}
-        <Faq items={faqs} />
-        <Newsletter />
+        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} type="horizontal" link={"blog/view-blog"}/>}
+        {/*<Faq items={faqs} />*/}
+        {/*<Newsletter />*/}
       </div>
     </>
   )

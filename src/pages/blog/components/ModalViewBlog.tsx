@@ -90,7 +90,7 @@ const ModalViewBlog=  () => {
               <div className="mb-10 w-full overflow-hidden rounded">
                 <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                   <img
-                    src={`http://localhost:4000/img/` + `${blog?.image}`}
+                    src={`${import.meta.env.VITE_BASE_API_URL}/img/` + `${blog?.image}`}
                     alt="image"
                     className="object-cover object-center"
                   />

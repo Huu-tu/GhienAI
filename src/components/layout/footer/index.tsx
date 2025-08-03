@@ -13,7 +13,7 @@ const socialLinks = [
   },
   {
     name: 'Facebook',
-    link: '/',
+    link: 'https://www.facebook.com/tu.huu.7165',
     icon: <FacebookIcon className="size-6" />,
   },
   {
@@ -26,7 +26,7 @@ const socialLinks = [
 const support = {
   title: 'Support',
   items: [
-    { label: 'Contact', href: '' },
+    { label: 'Contact', href: '/contact' },
     { label: 'FAQs', href: '' },
     { label: 'Pricing Plans', href: '' },
     { label: 'Sitemap', href: '' },
@@ -54,9 +54,9 @@ const category = {
 }
 
 const contact = {
-  address: '4517 Washington Ave. Manchester, Kentucky 39495',
-  phone: 'Phone: (405) 555-0128',
-  email: 'info@learningonline.com',
+  address: 'Location: 120 ngõ 68 cầu giấy, Hà Nội',
+  phone: 'Phone: +84388112130',
+  email: 'tuhuu7165@gmail.com',
 }
 
 const Footer = () => {
@@ -71,7 +71,7 @@ const Footer = () => {
                 className="h-8"
                 alt="Logo"
               />
-              <h6 className="text-3xl font-semibold tracking-wider">Flexy UI</h6>
+              <h6 className="text-3xl font-semibold tracking-wider">Ghiền AI</h6>
             </a>
             <address className="mt-3 text-base font-normal text-[#767E94]">
               <p className="mt-3 max-w-64">{contact.address}</p>
@@ -120,7 +120,7 @@ const Footer = () => {
       <div className="bg-mid">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-5 md:flex-row md:justify-between">
           <p className="text-center text-[#767E94]">
-            Learning Online © 2023. Developed by <span className="text-white">Abdul Basit</span>
+            DTSolution © 2025. Developed by <span className="text-white">Huu Tu</span>
           </p>
           <ul className="flex items-center gap-6">
             {socialLinks.map(({ name, icon, link }) => (

@@ -40,7 +40,7 @@ export const fetcher =  <T>(
   return new Promise<T>((resolve, reject) => {
     axios
       .create({
-        baseURL: `http://localhost:4000/api/`,
+        baseURL: `${import.meta.env.VITE_BASE_API_URL}/api`,
         headers: {
           Accept: options?.headerValueType ?? (options?.isFormData ? 'multipart/form-data' : 'application/json'),
         },
