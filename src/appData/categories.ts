@@ -1,32 +1,47 @@
 export const categories = [
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2017/09/02/22/10/dolphin-2708695_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-n8n.png',
     altText: 'JavaScript logo',
-    categoryName: 'Tin tức',
+    categoryName: 'N8N',
   },
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2024/05/16/09/15/tea-8765473_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-make.png',
     altText: 'TypeScript logo',
-    categoryName: 'Bối cảnh',
+    categoryName: 'Make',
   },
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2017/05/31/11/28/the-cup-2360104_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-reactjs.png',
     altText: 'TypeScript logo',
-    categoryName: 'Góc nhìn',
+    categoryName: 'React',
   },
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2017/07/29/18/42/wooden-box-2552370_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-eleven.png',
     altText: 'JavaScript logo',
-    categoryName: 'Tài liệu',
+    categoryName: 'Elevenlab',
   },
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-gemini.png',
     altText: 'JavaScript logo',
-    categoryName: 'Học tập',
+    categoryName: 'Gemini',
   },
   {
-    imageSrc: 'https://cdn.pixabay.com/photo/2016/02/23/17/44/apple-1218166_1280.png',
+    imageSrc: 'http://localhost:5173/public/logo-submagic.png',
     altText: 'TypeScript logo',
-    categoryName: 'Share kiến thức',
+    categoryName: 'Submagic',
+  },
+  {
+    imageSrc: 'http://localhost:5173/public/logo-wordpress.png',
+    altText: 'TypeScript logo',
+    categoryName: 'Wordpress',
+  },
+  {
+    imageSrc: 'http://localhost:5173/public/logo-laravel.png',
+    altText: 'TypeScript logo',
+    categoryName: 'Laravel',
+  },
+  {
+    imageSrc: 'http://localhost:5173/public/logo-openAi.png',
+    altText: 'TypeScript logo',
+    categoryName: 'OpenAi',
   },
 ]

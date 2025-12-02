@@ -12,13 +12,16 @@ const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
         <span className="absolute right-4 top-4 z-20 inline-flex items-center justify-center rounded-full bg-theme px-3 py-1 text-xs font-semibold capitalize text-white shadow">
           Blog
         </span>
-      <figure className="relative h-40 w-full overflow-hidden bg-gray-200">
-        <img
-          className="absolute inset-0 h-full w-full rounded-md object-cover"
-          src={`${import.meta.env.VITE_BASE_API_URL}/img/` + `${image}`}
-          alt="demo"
-        />
-      </figure>
+      {image && (
+        <figure className="relative h-40 w-full overflow-hidden bg-gray-200">
+          <img
+            className="absolute inset-0 h-full w-full rounded-md object-cover"
+            src={`${import.meta.env.VITE_BASE_API_URL}/img/${image}`}
+            alt="demo"
+          />
+        </figure>
+      )}
+
 
       <a
         href={`/${link}/${_id}`}>
