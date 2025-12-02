@@ -90,6 +90,7 @@ const ModalAddUpdateCase = ()=>{
                   <option value={'blog'}>Blog</option>
                   <option value={'doc'}>Tài liệu</option>
                   <option value={'service'}>Dịch vụ</option>
+                  <option value={'case-study'}>Ứng dụng</option>
                   <option value={'solution'}>Giải pháp</option>
                 </select>
               </div>
