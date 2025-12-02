@@ -13,11 +13,11 @@ const Base= ()=>{
       <Banner title={title} description={description}/>
       <div className="mx-auto max-w-6xl px-3">
         <CategoryList categories={categories} />
-        <SectionHeading
-          title={['Latest', 'Articles']}
-          subtitle=""
-        />
-        {isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} link={"blog/view-blog"}/>}
+        {/*<SectionHeading*/}
+        {/*  title={['Latest', 'Articles']}*/}
+        {/*  subtitle=""*/}
+        {/*/>*/}
+        {/*{isLoading ? <p>Đang tải...</p> : <BlogList posts={blogs} link={"blog/view-blog"}/>}*/}
 
         <SectionHeading
           title={['Popular', 'Articles']}
