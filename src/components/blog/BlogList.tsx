@@ -8,13 +8,13 @@ const BlogList: FC<BlogListProps> = ({ posts, type = 'vertical', link }) => {
   const isVertical = type === 'vertical'
 
   // ---- PAGINATION LOGIC ----
-  const postsPerPage = 9
-  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 9;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(posts.length / postsPerPage)
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  const startIndex = (currentPage - 1) * postsPerPage
-  const currentPosts = posts.slice(startIndex, startIndex + postsPerPage)
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const currentPosts = posts.slice(startIndex, startIndex + postsPerPage);
 
   return (
     <div className="flex flex-col gap-8">
@@ -32,11 +32,13 @@ const BlogList: FC<BlogListProps> = ({ posts, type = 'vertical', link }) => {
 
       {/* PAGINATION */}
       <div className="flex justify-center">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />
+        {/* NEW PAGINATION */}
+        {totalPages > 1 && (
+          <Pagination
+            pageCount={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        )}
       </div>
     </div>
   )

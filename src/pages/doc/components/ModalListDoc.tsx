@@ -6,7 +6,6 @@ interface Document {
   type: string
   size: string
   modified: string
-  icon: string
 }
 
 const SAMPLE_DOCUMENTS: Document[] = [
@@ -16,7 +15,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "PDF",
     size: "2.4 MB",
     modified: "Dec 1, 2024",
-    icon: "📄",
   },
   {
     id: "2",
@@ -24,7 +22,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "Excel",
     size: "1.8 MB",
     modified: "Nov 28, 2024",
-    icon: "📊",
   },
   {
     id: "3",
@@ -32,7 +29,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "PowerPoint",
     size: "5.2 MB",
     modified: "Nov 25, 2024",
-    icon: "📑",
   },
   {
     id: "4",
@@ -40,7 +36,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "Figma",
     size: "12.5 MB",
     modified: "Nov 20, 2024",
-    icon: "🎨",
   },
   {
     id: "5",
@@ -48,7 +43,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "Word",
     size: "856 KB",
     modified: "Nov 18, 2024",
-    icon: "📝",
   },
   {
     id: "6",
@@ -56,7 +50,6 @@ const SAMPLE_DOCUMENTS: Document[] = [
     type: "Archive",
     size: "45.3 MB",
     modified: "Nov 15, 2024",
-    icon: "📦",
   },
 ]
 const ModalListDoc = () =>{
