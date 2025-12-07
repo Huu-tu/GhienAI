@@ -9,3 +9,7 @@ export {
   useViewCase,
   useCreateCase
 } from './api/case-study/useCaseStudy';
+
+export {
+  useUploadDocument
+} from './api/document/useDocument'

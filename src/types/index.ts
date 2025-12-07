@@ -47,3 +47,16 @@ export interface CaseStudyPost {
   publishDate?: string
   estimatedTimeToRead?: string
 }
+
+export interface UploadFile{
+  id: string
+  name?: string
+  size: number
+  progress?: number
+  status?: "uploading" | "success" | "error"
+  file?: File
+}
+
+export interface UploadFilePayload {
+  file?: File | null;
+}
