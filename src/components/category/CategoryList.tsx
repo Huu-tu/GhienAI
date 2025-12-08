@@ -8,7 +8,7 @@ interface CategoryListProps {
 const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
   return (
     <section className="py-8">
-      <h2 className="mb-7 text-center text-2xl font-bold text-primary">Công nghệ chung tôi có</h2>
+      <h2 className="mb-7 text-center text-2xl font-bold text-primary">Công nghệ chung tôi hay dùng</h2>
       <div className="overflow-hidden w-[80%] mx-auto">
         <div className="flex gap-10 animate-[scrollX_20s_linear_infinite]">
           {[...categories, ...categories].map((category, index) => (

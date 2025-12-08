@@ -5,7 +5,7 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ title, description }) => {
   return (
-    <div className="bg-light">
+    <div className="bg-background">
       <div className="mx-auto max-w-3xl px-3 py-6 text-center md:py-11">
         <h1 className="text-3xl font-semibold leading-tight text-primary md:text-[40px]">
           {title}
