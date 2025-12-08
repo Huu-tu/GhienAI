@@ -6,7 +6,6 @@ const navLinks = [
   { title: 'Blog', link: '/blog' },
   { title: 'Tài liệu', link: '/doc' },
   { title: 'Ứng dụng', link: '/case-study' },
-  { title: 'Ghiền AI', link: '/about' },
   { title: 'Liên hệ', link: '/contact' },
 ]
 
@@ -49,7 +48,7 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={link}
-                  className="rounded-md px-3 py-2 text-secondary transition-colors duration-100 ease-linear hover:bg-gray-700 hover:text-white"
+                  className="rounded-md px-3 py-2 text-secondary transition-colors duration-100 ease-linear hover:bg-background hover:text-white"
                 >
                   {title}
                 </a>

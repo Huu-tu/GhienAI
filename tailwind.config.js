@@ -15,6 +15,9 @@ export default {
         'gradient-pattern-2': 'linear-gradient(115deg, #000000, #444444)',
       },
       colors: {
+        background:{
+          DEFAULT: '#f1bc7a',
+        },
         theme: {
           DEFAULT: '#fb991c',
           hover: '#d48119',
