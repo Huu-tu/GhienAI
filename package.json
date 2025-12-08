@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "6.11.1",
     "axios": "^1.10.0",
+    "dayjs": "^1.11.19",
     "font-awesome": "^4.7.0",
     "i18next": "^25.3.2",
     "lucide-react": "^0.418.0",

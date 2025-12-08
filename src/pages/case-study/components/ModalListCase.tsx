@@ -1,8 +1,10 @@
 import { FC, useState } from 'react'
 import Pagination from 'components/pagination/Pagination'
 import { BlogListProps } from 'types/index'
+import { useFormatDate } from 'hooks'
 
 const ModalListCase: FC<BlogListProps> = ({ posts, link }) => {
+  const { formatDate } = useFormatDate();
 
   // ---- PAGINATION LOGIC ----
   const postsPerPage = 9;
@@ -27,16 +29,14 @@ const ModalListCase: FC<BlogListProps> = ({ posts, link }) => {
                 />
               </figure>
 
-              <a
-                href={`/${link}/${post._id}`}
-              >
+              <a href={`/${link}/${post._id}`}>
                 <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
                   {post.title}
                 </h3>
                 <p className="text-gray-700 truncate">{post.shortDescription}</p>
 
-                <p className="mt-4 text-sm font-semibold text-primary">
-                  {/*{formatDate(publishDate)} | {estimatedTimeToRead}*/}
+                <p className="mt-4 text-xs font-semibold text-gray-600">
+                  {formatDate(post.createdAt)}
                 </p>
               </a>
             </div>

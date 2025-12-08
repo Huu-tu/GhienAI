@@ -1,9 +1,10 @@
 import { FC } from 'react'
-// import { formatDate } from '../../utils'
+import { useFormatDate } from 'hooks'
 import {BlogCardProps} from 'types/index';
 
 const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
-  const { title, shortDescription, image, _id } = post
+  const { title, shortDescription, image, _id, createdAt } = post
+  const { formatDate } = useFormatDate();
 
   return (
     <div key={_id} className="flex flex-col gap-3 rounded-lg   p-3 lg:flex-row">
@@ -15,15 +16,13 @@ const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
         />
       </figure>
 
-      <a
-        href={`/${link}/${_id}`}
-      >
+      <a href={`/${link}/${_id}`}>
         <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
           {title}
         </h3>
         <p className="text-gray-700">{shortDescription}</p>
         <p className="mt-4 text-sm font-semibold text-primary">
-          {/*{formatDate(publishDate)} | {estimatedTimeToRead}*/}
+          {formatDate(createdAt)}
         </p>
       </a>
     </div>

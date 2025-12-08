@@ -14,7 +14,7 @@ export interface BlogPost {
   image?: string;
   description?: string;
   type?: string;
-  publishDate?: string
+  createdAt?: string
   estimatedTimeToRead?: string
 }
 
@@ -44,7 +44,7 @@ export interface CaseStudyPost {
   image?: string;
   description?: string;
   type?: string;
-  publishDate?: string;
+  createdAt?: string
   estimatedTimeToRead?: string;
 }
 
