@@ -6,6 +6,7 @@ import Blog from 'pages/blog';
 import ModalAddUpdateBlog from 'pages/blog/components/ModalAddUpdateBlog';
 import ModalViewBlog from 'pages/blog/components/ModalViewBlog';
 import Doc from 'pages/doc';
+import ModalAddUpdateDoc from 'pages/doc/components/ModalAddUpdateDoc';
 import CaseStudy from 'pages/case-study';
 import ModalAddUpdateCase from 'pages/case-study/components/ModalAddUpdateCase';
 import ModalViewCase from 'pages/case-study/components/ModalViewCase';
@@ -30,8 +31,14 @@ export const routers = createBrowserRouter([{
       element: <ModalViewBlog />,
     }]
   },{
-    path: PUBLIC_ROUTERS.DOC,
-    element: <Doc />
+    path: PUBLIC_ROUTERS.DOC.INDEX,
+    children: [{
+      path: PUBLIC_ROUTERS.DOC.INDEX,
+      element: <Doc />,
+    },{
+      path: PUBLIC_ROUTERS.DOC.ADD_DOC,
+      element: <ModalAddUpdateDoc />,
+    }],
   },{
     path: PUBLIC_ROUTERS.CASE.INDEX,
     children: [{

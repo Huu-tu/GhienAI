@@ -1,6 +1,7 @@
 import { FC } from 'react'
 // import { formatDate } from '../../utils'
 import {BlogCardProps} from 'types/index';
+import Pagination from 'components/pagination/Pagination';
 
 const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
   const { title, shortDescription, image, _id } = post
