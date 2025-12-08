@@ -20,9 +20,6 @@ const ModalDocItem = ({ document }: { document: Document })=>{
          <a
            href={`${import.meta.env.VITE_BASE_API_URL}/file/${document.fileUrl}`}
            download={document.name}
-           // onClick={() => download({
-           //   url: document.fileUrl,
-           //   filename: document.name })}
            className="text-xs font-medium  hover:underline">Download</a>
       </div>
     </div>
