@@ -1,7 +1,7 @@
 
 const Heading =()=>{
   return(
-    <header className="border-b border-border bg-card">
+    <header className=" bg-card">
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="flex items-center justify-between">
           <div>

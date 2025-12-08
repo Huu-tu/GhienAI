@@ -18,7 +18,7 @@ const ModalListCase: FC<BlogListProps> = ({ posts, link }) => {
       <div className="grid gap-6 sm:grid-cols-2">
         {
           currentPosts.map((post)=>(
-            <div key={post._id} className="flex flex-col gap-3 rounded-lg border bg-light p-3 lg:flex-row">
+            <div key={post._id} className="flex flex-col gap-3 rounded-lg  p-3 lg:flex-row">
               <figure className="relative mt-1 h-24 min-w-40 overflow-hidden bg-gray-200">
                 <img
                   className="absolute inset-0 h-full w-full rounded-md object-cover transition-transform duration-300 hover:scale-125"

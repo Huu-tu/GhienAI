@@ -9,7 +9,7 @@ const BlogCard: FC<BlogCardProps> = ({ post, link }) => {
   return (
     <div
       key={_id}
-      className="flex transform flex-col gap-3 rounded-lg border bg-light p-3 transition-transform hover:scale-105">
+      className="flex transform flex-col gap-3 rounded-lg   p-3 transition-transform hover:scale-105">
         <span className="absolute right-4 top-4 z-20 inline-flex items-center justify-center rounded-full bg-theme px-3 py-1 text-xs font-semibold capitalize text-white shadow">
           Blog
         </span>
