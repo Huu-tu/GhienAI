@@ -33,6 +33,8 @@ const ModalListCase: FC<BlogListProps> = ({ posts, link }) => {
                 <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 hover:text-theme">
                   {post.title}
                 </h3>
+                <p className="text-gray-700 truncate">{post.shortDescription}</p>
+
                 <p className="mt-4 text-sm font-semibold text-primary">
                   {/*{formatDate(publishDate)} | {estimatedTimeToRead}*/}
                 </p>

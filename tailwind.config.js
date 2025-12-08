@@ -16,7 +16,7 @@ export default {
       },
       colors: {
         background:{
-          DEFAULT: '#c3bebe',
+          DEFAULT: '#f1bc7a',
         },
         theme: {
           DEFAULT: '#fb991c',
