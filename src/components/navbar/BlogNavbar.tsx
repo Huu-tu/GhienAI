@@ -7,7 +7,7 @@ const navLinks = [
   { title: 'Tài liệu', link: '/doc' },
   { title: 'Ứng dụng', link: '/case' },
   { title: 'Ghiền AI', link: '/about' },
-  { title: 'Liên hệ', link: '/contact' },
+  { title: 'Đóng góp', link: '/contact' },
 ]
 
 const Navbar = () => {
