@@ -11,5 +11,6 @@ export {
 } from './api/case-study/useCaseStudy';
 
 export {
+  useGetDocuments,
   useUploadDocument
 } from './api/document/useDocument'

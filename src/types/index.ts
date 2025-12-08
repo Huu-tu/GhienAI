@@ -44,8 +44,16 @@ export interface CaseStudyPost {
   image?: string;
   description?: string;
   type?: string;
-  publishDate?: string
-  estimatedTimeToRead?: string
+  publishDate?: string;
+  estimatedTimeToRead?: string;
+}
+
+export interface Document{
+  id: string
+  name?: string
+  fileUrl?: string
+  fileType?: string
+  fileSize?: string
 }
 
 export interface UploadFile{
@@ -55,6 +63,11 @@ export interface UploadFile{
   progress?: number
   status?: "uploading" | "success" | "error"
   file?: File
+}
+
+export type DownloadFile = {
+  url?: string
+  filename?: string
 }
 
 export interface UploadFilePayload {

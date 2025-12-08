@@ -9,6 +9,9 @@ export const QUERY_KEY = {
   // CASE STUDY
   GET_CASES: 'GET_CASES',
   VIEW_CASE: 'VIEW_CASE',
+
+  // DOCUMENT
+  GET_DOCUMENTS: 'GET_DOCUMENTS'
 };
 
 export const NETWORK_CONFIG = {
