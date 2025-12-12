@@ -1,27 +1,20 @@
-# Build stage
-FROM node:20-alpine AS builder
-
+FROM node:18.18-alpine AS build
 WORKDIR /app
-
-# Copy dependency files first (để cache hiệu quả)
-COPY package.json yarn.lock ./
-
-RUN yarn install --frozen-lockfile
-
-# Copy toàn bộ source code
 COPY . .
-
-# Build Vite app (Vite sẽ tạo ra thư mục dist/)
+RUN yarn
 RUN yarn build
 
-# Production stage
+## run stage ##
 FROM nginx:alpine
+WORKDIR /app
 
-# Copy Vite dist folder sang nginx
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /app
 
-# Expose port 80
-EXPOSE 80
+RUN mkdir -p /var/cache/nginx && chown -R 1000:1000 /var/cache/nginx
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+RUN touch /var/run/nginx.pid && chown -R 1000:1000 /var/run/nginx.pid
+
+RUN chown -R 1000:1000 /app
+
+COPY nginx.conf /etc/nginx/nginx.conf
+USER 1000
