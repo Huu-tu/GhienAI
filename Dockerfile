@@ -8,7 +8,7 @@ RUN yarn build
 FROM nginx:alpine
 WORKDIR /app
 
-COPY --from=build /app/dist /app
+COPY --from=builder /app/dist /app
 
 RUN mkdir -p /var/cache/nginx && chown -R 1000:1000 /var/cache/nginx
 
