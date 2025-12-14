@@ -1,4 +1,32 @@
-name: deploy.yml
+name: GhienAI
+
 on:
+  push:
+    branches:
+      - main
 
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: GhienAI
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /root/GhienAI-Production/GhienAI
+
+            git pull origin main
+
+            docker build -t react-prod .
+
+            docker stop react-container || true
+            docker rm react-container || true
+
+            docker run -d \
+              -p 3000:3000 \
+              --name react-container \
+              react-prod
