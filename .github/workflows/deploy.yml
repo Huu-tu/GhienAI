@@ -25,6 +25,8 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ghienai-web:latest
+          build-args: |
+            VITE_BASE_API_URL=https://api.${{ secrets.GOCNHINAI_DOMAIN }}
 
       - name: Deploy on VPS
         uses: appleboy/ssh-action@v1.0.3
