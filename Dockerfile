@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY . .
+COPY .env .
 RUN yarn build
 
 FROM node:20-alpine
