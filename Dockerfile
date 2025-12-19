@@ -1,4 +1,3 @@
-# Stage 1: Build React app
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -6,8 +5,9 @@ RUN yarn install
 COPY . .
 RUN yarn build
 
-# Stage 2: Serve bằng nginx
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:20-alpine
+WORKDIR /app
+RUN yarn global add serve
+COPY --from=builder /app/dist ./dist
+EXPOSE 3000
+CMD ["serve", "-s", "dist", "-l", "3000"]
