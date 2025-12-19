@@ -1,20 +1,14 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install
 COPY . .
-RUN yarn
 RUN yarn build
 
-## run stage ##
-FROM nginx:alpine
+FROM node:20-alpine
 WORKDIR /app
-
-COPY --from=builder /app/dist /app
-
-RUN mkdir -p /var/cache/nginx && chown -R 1000:1000 /var/cache/nginx
-
-RUN touch /var/run/nginx.pid && chown -R 1000:1000 /var/run/nginx.pid
-
-RUN chown -R 1000:1000 /app
-
-COPY nginx.conf /etc/nginx/nginx.conf
-USER 1000
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
+EXPOSE 3001
+CMD ["node", "dist/index.js"]
