@@ -122,7 +122,6 @@ const ModalAddUpdateBlog = ()=>{
                 imageUploadURL: `${import.meta.env.VITE_BASE_API_URL}/api/user/upload-image`,
                 imageUploadMethod: 'POST',
                 imageAllowedTypes: ['jpeg', 'jpg', 'png'],
-                imageMaxSize: 5 * 1024 * 1024,
               }}
             />
           </div>
