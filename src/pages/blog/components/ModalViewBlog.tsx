@@ -87,26 +87,10 @@ const ModalViewBlog=  () => {
               </div>
             </div>
             <div>
-              <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                {blog?.shortDescription}
-              </p>
-              <div className="mb-10 w-full overflow-hidden rounded">
-                <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                  <img
-                    src={`${import.meta.env.VITE_BASE_API_URL}/img/` + `${blog?.image}`}
-                    alt="image"
-                    className="object-cover object-center"
-                  />
-                </div>
-              </div>
               <div
                 className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: blog?.description || '' }}
               ></div>
-
-              {/*<p className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">*/}
-              {/*  {blog?.description}*/}
-              {/*</p>*/}
               <div className="items-center justify-between sm:flex">
                 <div className="mb-5">
                   <h4 className="mb-3 text-sm font-medium text-body-color">
