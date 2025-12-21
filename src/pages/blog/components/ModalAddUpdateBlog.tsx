@@ -118,7 +118,12 @@ const ModalAddUpdateBlog = ()=>{
                 setDescription(newContent);
                 setData(prev => ({ ...prev, description: newContent })); // cập nhật vào data.content
               }}
-              // config={config}
+              config={{
+                imageUploadURL: `${import.meta.env.VITE_BASE_API_URL}/api/user/upload-image`,
+                imageUploadMethod: 'POST',
+                imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+                imageMaxSize: 5 * 1024 * 1024,
+              }}
             />
           </div>
         <button type="submit"

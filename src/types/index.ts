@@ -73,3 +73,8 @@ export type DownloadFile = {
 export interface UploadFilePayload {
   file?: File | null;
 }
+
+export type EditorProps = {
+  value?: string;
+  onChange?: (data: string) => void;
+};
