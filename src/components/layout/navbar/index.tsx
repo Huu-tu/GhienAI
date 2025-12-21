@@ -34,7 +34,7 @@ const Navbar = () => {
                 alt="Logo"
               />
               <span className="self-center whitespace-nowrap text-xl font-semibold text-primary md:text-2xl">
-                Ghiền AI
+                Góc Nhìn AI
               </span>
             </a>
 
