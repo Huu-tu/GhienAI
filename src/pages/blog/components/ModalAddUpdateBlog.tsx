@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
-import FroalaEditor from 'react-froala-wysiwyg';
+import Editor from 'components/custom/Editor/Editor'
 import { useCreateBlog } from 'libs/hooks';
 import { BlogPayload } from 'types/index'
-
-import 'froala-editor/js/plugins.pkgd.min.js';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import 'froala-editor/css/froala_style.min.css';
-import 'font-awesome/css/font-awesome.css';
 
 const ModalAddUpdateBlog = ()=>{
   const { mutate: createBlog } = useCreateBlog();
@@ -111,17 +106,11 @@ const ModalAddUpdateBlog = ()=>{
           <div className="sm:col-span-2">
             <label htmlFor="description"
                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
-            <FroalaEditor
-              tag="textarea"
-              model={description}
-              onModelChange={(newContent: any): void => {
-                setDescription(newContent);
-                setData(prev => ({ ...prev, description: newContent })); // cập nhật vào data.content
-              }}
-              config={{
-                imageUploadURL: `${import.meta.env.VITE_BASE_API_URL}/api/user/upload-image`,
-                imageUploadMethod: 'POST',
-                imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+            <Editor
+              value={description}
+              onChange={(content) => {
+                setDescription(content);
+                setData(prev => ({ ...prev, description: content }));
               }}
             />
           </div>

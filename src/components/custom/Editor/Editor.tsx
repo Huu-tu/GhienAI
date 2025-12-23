@@ -1,43 +1,25 @@
-// import { CKEditor } from '@ckeditor/ckeditor5-react';
-// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-// import {EditorProps} from 'types/index';
-//
-// const Editor = ({ value = '', onChange }: EditorProps) => {
-//   return (
-//     <CKEditor
-//       editor={ClassicEditor}
-//       data={value}
-//       config={{
-//         placeholder: 'Nhập nội dung...',
-//         toolbar: {
-//           items: [
-//             'heading',
-//             '|',
-//             'bold',
-//             'italic',
-//             'underline',
-//             'link',
-//             'bulletedList',
-//             'numberedList',
-//             '|',
-//             'codeBlock',
-//             'blockQuote',
-//             'insertTable',
-//             '|',
-//             'undo',
-//             'redo',
-//           ],
-//         },
-//         table: {
-//           contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
-//         },
-//       }}
-//       onChange={(_, editor) => {
-//         const data = editor.getData();
-//         onChange?.(data);
-//       }}
-//     />
-//   );
-// };
-//
-// export default Editor;
+import FroalaEditor from 'react-froala-wysiwyg';
+import {EditorProps} from 'types/index';
+
+import 'froala-editor/js/plugins.pkgd.min.js';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'froala-editor/css/froala_style.min.css';
+import 'font-awesome/css/font-awesome.css';
+
+const Editor = ({ value = '', onChange }: EditorProps) => {
+  return (
+    <FroalaEditor
+      tag="textarea"
+      model={value}
+      onModelChange={(content: string) => onChange(content)}
+      config={{
+        imageUploadURL: `${import.meta.env.VITE_BASE_API_URL}/api/user/upload-image`,
+        imageUploadMethod: 'POST',
+        imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+      }}
+    />
+
+  );
+};
+
+export default Editor;

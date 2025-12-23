@@ -8,9 +8,6 @@ const ModalAddUpdateDoc = () =>{
 
 
   const handleUploadDocument = async (files: File[]) =>{
-    console.log('dsad')
-    console.log(files)
-
     const formData = new FormData()
     files.forEach((file) => {
       formData.append("file", file)

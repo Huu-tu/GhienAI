@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
+import Editor from 'components/custom/Editor/Editor'
 import { useCreateCase } from 'libs/hooks';
 import { CaseStudyPayload } from 'types/index'
 
 const ModalAddUpdateCase = ()=>{
   const { mutate: createCase } = useCreateCase();
 
+  const[description, setDescription] = useState('');
   const[file, setFile] = useState(null);
   const[data, setData] = useState({
     title: "",
     shortDescription: "",
     description: "",
     image: "",
-    type:""
+    type: ""
   });
 
   const handleChange = async (e:any) =>{
@@ -57,9 +59,7 @@ const ModalAddUpdateCase = ()=>{
             title={['Modal add Case Study']}
             subtitle=""
           />
-          <div
-            className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
-          >
+          <div className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
             <form onSubmit={submitHandler}>
               <div className="sm:col-span-2">
                 <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -108,10 +108,13 @@ const ModalAddUpdateCase = ()=>{
                 <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Mổ tả chi tiết
                 </label>
-                <input type="textarea" name="description" id="description"
-                       onChange={handleChange} value={data.description}
-                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                       placeholder="Nhập văn bản" />
+                <Editor
+                  value={description}
+                  onChange={(content) => {
+                    setDescription(content);
+                    setData(prev => ({ ...prev, description: content }));
+                  }}
+                />
               </div>
 
               <button type="submit"

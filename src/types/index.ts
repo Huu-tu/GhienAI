@@ -74,7 +74,7 @@ export interface UploadFilePayload {
   file?: File | null;
 }
 
-export type EditorProps = {
+export interface  EditorProps {
   value?: string;
-  onChange?: (data: string) => void;
-};
+  onChange: (data: string) => void;
+}
