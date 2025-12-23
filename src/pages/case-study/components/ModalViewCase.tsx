@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom';
 import SectionHeading from 'components/sectionHeading/ColoredSectionHeading'
+import SharePost from "components/custom/Button/SharePost"
+import TagButton from "components/custom/Button/TagButton"
 import {useViewCase} from "libs/hooks"
 import { useFormatDate } from 'hooks'
 
-import SharePost from "components/custom/Button/SharePost"
-import TagButton from "components/custom/Button/TagButton"
+import 'froala-editor/css/froala_style.min.css';
 
 const ModalViewCase=  () =>{
   const { id } = useParams();
@@ -88,7 +89,7 @@ const ModalViewCase=  () =>{
           </div>
           <div>
             <div
-              className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+              className="fr-view mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
               dangerouslySetInnerHTML={{ __html: viewCase?.description || '' }}
             ></div>
             <div className="items-center justify-between sm:flex">
