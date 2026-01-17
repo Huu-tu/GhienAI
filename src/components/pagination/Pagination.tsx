@@ -3,16 +3,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   pageCount: number;
+  page: number;
   onPageChange: (page: number) => void;
 }
 
-export default function Pagination({ pageCount, onPageChange }: Props) {
+export default function Pagination({ pageCount, page, onPageChange }: Props) {
   return (
     <ReactPaginate
       previousLabel={<ChevronLeft className="w-4 h-4" />}
       nextLabel={<ChevronRight className="w-4 h-4" />}
       breakLabel="..."
       pageCount={pageCount}
+      forcePage={page - 1}
       marginPagesDisplayed={1}
       pageRangeDisplayed={3}
       onPageChange={(event) => onPageChange(event.selected + 1)}

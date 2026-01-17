@@ -1,8 +1,7 @@
-import { BlogPayload } from 'types/index'
+import {BlogPost, BlogPayload, GetBlogsResponse, UseGetBlogsParams} from 'types/index';
 import { fetcher, HTTPMethod } from 'config/api'
 import { QUERY_KEY } from 'config/constants'
 import { useQuery, useMutation } from '@tanstack/react-query'
-import {BlogPost} from 'types/index';
 
 const baseUrl = 'blog/';
 const url = {
@@ -12,17 +11,23 @@ const url = {
 };
 
 
-const useGetBlogs = () => {
+const useGetBlogs = ({ page , limit, q  }: UseGetBlogsParams) => {
   return useQuery({
-    queryKey: [QUERY_KEY.GET_BLOGS],
-    queryFn: () => {
-      return fetcher<BlogPost[]>({
+    queryKey: [QUERY_KEY.GET_BLOGS, page, limit, q],
+    queryFn: () =>
+      fetcher<GetBlogsResponse>({
         method: HTTPMethod.GET,
-        url: url.getBlogs
-      })
-    },
+        url: url.getBlogs,
+        params: {
+          page,
+          limit,
+          q,
+        },
+      }),
+    placeholderData: (previousData) => previousData,
   })
 }
+
 
 const useViewBlog = (_id: string) => {
   return useQuery({

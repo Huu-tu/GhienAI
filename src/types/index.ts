@@ -24,7 +24,10 @@ export interface BlogCardProps {
 }
 
 export interface BlogListProps {
-  posts: BlogPost[];
+  posts?: BlogPost[];
+  page?: number;
+  totalPages?: number
+  onPageChange?: (page: number) => void
   type?: 'vertical' | 'horizontal';
   link?: string;
 }
@@ -77,4 +80,22 @@ export interface UploadFilePayload {
 export interface  EditorProps {
   value?: string;
   onChange: (data: string) => void;
+}
+
+export interface BlogPagination {
+  page: number
+  limit: number
+  total: number
+  totalPages: number
+}
+
+export type GetBlogsResponse = {
+  data: BlogPost[]
+  pagination: BlogPagination
+}
+
+export type UseGetBlogsParams = {
+  page: number
+  limit: number
+  q?: string
 }

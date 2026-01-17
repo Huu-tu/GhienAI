@@ -1,4 +1,5 @@
 import { MenuIcon, SearchIcon } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const navLinks = [
@@ -10,11 +11,19 @@ const navLinks = [
 ]
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const [keyword, setKeyword] = useState('')
   const [showNav, setShowNav] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
   const handleShowNav = () => setShowNav(!showNav)
   const handleModal = () => setShowModal(!showModal)
+
+  const handleSearch = () => {
+    if (!keyword.trim()) return
+    navigate(`/blog?q=${encodeURIComponent(keyword)}`)
+    setShowModal(false)
+  }
 
   return (
     <>
@@ -85,6 +94,9 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Tìm kiếm..."
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                 className="ml-2 w-full border-none bg-transparent outline-none focus:ring-0"
               />
             </div>
